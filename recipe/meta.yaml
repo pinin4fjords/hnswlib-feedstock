@@ -25,11 +25,11 @@ requirements:
     - numpy >=1.10.0
   run:
     - python
+    - numpy
 
 test:
   imports:
     - hnswlib
-    - numpy
 
 about:
   home: https://github.com/nmslib/hnswlib
