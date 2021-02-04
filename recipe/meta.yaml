@@ -10,7 +10,7 @@ source:
   sha256: dd48bb8df3253c2c90f3c4b9c291bfae30d89bbe60383eea7a0498c3753812e5
 
 build:
-  number: 3
+  number: 4
   skip: True  # [win or py27]
 
 requirements:
@@ -25,6 +25,7 @@ requirements:
     - numpy >=1.10.0
   run:
     - python
+    - numpy
 
 test:
   imports:
