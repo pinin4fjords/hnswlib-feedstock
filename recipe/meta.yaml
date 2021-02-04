@@ -1,21 +1,21 @@
 {% set name = "hnswlib" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/nmslib/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: dd48bb8df3253c2c90f3c4b9c291bfae30d89bbe60383eea7a0498c3753812e5
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 5598c0a1a6eeb577bc271cac59983c89eb4c1beb1b7e75ba50068e2dc0c038f2
 
 build:
-  number: 4
+  number: 0
   skip: True  # [win or py27]
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
 
 requirements:
   build:
-    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
